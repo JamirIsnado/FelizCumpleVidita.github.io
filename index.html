@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para ti ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+    <main class="container">
+        
+        <section id="screen-welcome" class="screen fade-in">
+            <img src="assets/cat-intro.gif" alt="Hola" class="gif-main">
+            <h1 class="title-main">¡Hola <span class="red-text">mi amor</span>!</h1>
+            <p class="subtitle">¿Quieres ver tu regalo?</p>
+            <div class="btn-group">
+                <button id="btn-yes" class="btn-pill">SÍ, POR FAVOR</button>
+                <button id="btn-no" class="btn-pill outline">NO, GRACIAS</button>
+            </div>
+        </section>
+
+        <section id="screen-sad" class="screen hidden fade-in">
+            <img src="assets/cat-sad.gif" alt="Triste" class="gif-main">
+            <h1 class="title-main red-text">Te prometo que te gustará...</h1>
+            <div class="btn-group">
+                <button id="btn-retry" class="btn-pill outline">INTENTAR DE NUEVO</button>
+            </div>
+        </section>
+
+        <section id="screen-menu" class="screen hidden fade-in">
+            <h1 class="title-main red-text small-margin">¡ESTO ES PARA TI!</h1>
+            <p class="subtitle">Espero que te guste, te amo ❤️</p>
+            <div class="grid-menu">
+                <div class="card" id="card-photos">
+                    <img src="assets/icon-photo.png" alt="Fotos">
+                </div>
+                <div class="card" id="card-flowers">
+                    <img src="assets/icon-flowers.png" alt="Flores">
+                </div>
+                <div class="card" id="card-music">
+                    <img src="assets/icon-lock.png" alt="Música">
+                </div>
+                <div class="card" id="card-letter">
+                    <img src="assets/icon-letter.png" alt="Carta">
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-photos" class="screen hidden fade-in">
+            <div class="collage-container">
+                <div class="col-side">
+                    <!-- ÁLBUM 1 (hasta 5): foto1.jpg, foto1_1.jpg... -->
+                    <div class="polaroid rotate-left"
+                         onclick="openModal(this)"
+                         data-text="¿Recuerdas nuestras primeras salidas? Como cuando me quedaba hasta la noche contigo ahí afuera de tu casita... solo hablábamos, nos contábamos de todo y no queríamos despedirnos. De verdad que si fuera por mí, jamás me iba, quería quedarme contigo todo el tiempo. No me importaba estar en la calle o pasear por lugares que ni conocíamos, lo único que me importaba era pasar más tiempo a tu lado. Y aún sigue siendo así..."
+                         data-images="assets/foto1.jpg,assets/foto1_1.jpg,assets/foto1_2.jpg,assets/foto1_3.jpg,assets/foto1_4.jpg">
+                        <img src="assets/foto1.jpg" alt="Foto 1" onerror="this.src='https://via.placeholder.com/400x500'">
+                        <p class="caption">Nuestras primeras salidas</p>
+                    </div>
+
+                    <!-- ÁLBUM 2 -->
+                    <div class="polaroid rotate-right"
+                         onclick="openModal(this)"
+                         data-text="¿Sabes que si no fuera contigo yo no saldría ni haría nada? Cada salida a tu lado es especial para mí. Sé que casi nunca te digo lo importante que es para mí hacer todo esto contigo, pero quiero que sepas que cada momento que compartimos es único ❤️. No haría con nadie más lo que hago contigo. Me encanta comer a tu lado, comprarnos nuestros antojitos y simplemente ser felices."
+                         data-images="assets/foto2.jpg,assets/foto2_1.jpg,assets/foto2_2.jpg,assets/foto2_3.jpg,assets/foto2_4.jpg">
+                        <img src="assets/foto2.jpg" alt="Foto 2" onerror="this.src='https://via.placeholder.com/400x500'">
+                        <p class="caption">hameee</p>
+                    </div>
+                </div>
+
+                <div class="col-center">
+                    <div class="photo-strip">
+                        <img src="assets/foto3.jpg" onerror="this.src='https://via.placeholder.com/150'">
+                        <img src="assets/foto4.jpg" onerror="this.src='https://via.placeholder.com/150'">
+                        <img src="assets/foto5.jpg" onerror="this.src='https://via.placeholder.com/150'">
+                    </div>
+                    <div class="photo-strip offset-down">
+                        <img src="assets/foto6.jpg" onerror="this.src='https://via.placeholder.com/150'">
+                        <img src="assets/foto7.jpg" onerror="this.src='https://via.placeholder.com/150'">
+                        <img src="assets/foto8.jpg" onerror="this.src='https://via.placeholder.com/150'">
+                    </div>
+                </div>
+
+                <div class="col-side">
+                    <!-- ÁLBUM 3 -->
+                    <div class="polaroid rotate-right"
+                         onclick="openModal(this)"
+                         data-text="Sé perfectamente lo mucho que significan los detallitos para ti. Con el tiempo he aprendido que no siempre se trata de algo material o costoso, sino de demostrarte que estoy pensando en ti. Se la ilusión que te hace recibir tus florcitas y la verdad, lo hago porque no hay nada que me guste más que ver tu sonrisita ✨ Me encanta verte feliz y tranquila, y por esa misma razón trato de esforzarme cada día para darte la mejor versión de mí chiquita. Te juro que mi intención siempre es cuidarte y hacerte sonreír aunque a veces no lo parezca"
+                         data-images="assets/foto9.jpg,assets/foto9_1.jpg,assets/foto9_2.jpg,assets/foto9_3.jpg,assets/foto9_4.jpg">
+                        <img src="assets/foto9.jpg" alt="Foto 3" onerror="this.src='https://via.placeholder.com/400x500'">
+                        <p class="caption">Tus regalitos</p>
+                    </div>
+
+                    <!-- ÁLBUM 4 -->
+                    <div class="polaroid rotate-left"
+                         onclick="openModal(this)"
+                         data-text="Después de tantos años, después de tanto tiempo a tu lado, me he dado cuenta de que ya no podría vivir sin ti. Te volviste una parte muy importante de mi vida... Tantos momentos que pasamos juntos, todas las cosas que vivimos y todo lo que tuvimos que aguantar, me dan la razón de que tú eres el amor de mi vida. No hay persona con la que quiera compartir mi vida que no seas tú. Eres mi todo y espero poder seguir a tu lado para crear muchos más recuerdos y momentos especiales💓"
+                         data-images="assets/foto10.jpg,assets/foto10_1.jpg,assets/foto10_2.jpg,assets/foto10_3.jpg,assets/foto10_4.jpg">
+                        <img src="assets/foto10.jpg" alt="Foto 4" onerror="this.src='https://via.placeholder.com/400x500'">
+                        <p class="caption">Recuerditos</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bottom-controls">
+                <h1 class="handwriting-title red-text title-mini">Nuestros Recuerdos</h1>
+                <button class="btn-pill outline btn-mini" onclick="goBack()">volver</button>
+            </div>
+
+            <div id="image-modal" class="modal hidden" onclick="closeModal()">
+                <div class="modal-content" onclick="event.stopPropagation()">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+
+                    <div class="modal-body">
+                        <div class="modal-img-container" id="modal-img-container">
+                            <!-- Controles álbum -->
+                            <button class="modal-nav modal-prev" id="modal-prev" type="button" aria-label="Anterior">‹</button>
+                            <img id="modal-img" src="" alt="Zoom">
+                            <button class="modal-nav modal-next" id="modal-next" type="button" aria-label="Siguiente">›</button>
+
+                            <div class="modal-counter" id="modal-counter">1 / 1</div>
+                        </div>
+
+                        <div class="modal-text-container">
+                            <h2 class="handwriting-title red-text">❤❤❤❤❤❤❤❤❤❤❤❤</h2>
+                            <p id="modal-text">Texto aquí</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="screen-flowers" class="screen hidden fade-in" style="width: 100vw; height: 100vh; position: fixed; top: 0; left: 0; background: black; z-index: 100;">
+    
+            <button onclick="goBack()" style="
+                position: absolute; 
+                top: 20px; 
+                right: 20px; 
+                z-index: 9999; 
+                background: rgba(255, 255, 255, 0.1); 
+                color: white; 
+                border: 1px solid rgba(255, 255, 255, 0.5); 
+                padding: 10px 25px; 
+                border-radius: 50px; 
+                font-family: 'Indie Flower', cursive; 
+                font-size: 1.2rem; 
+                cursor: pointer;
+                backdrop-filter: blur(5px);
+                transition: all 0.3s ease;">
+                ← Volver
+            </button>
+            <iframe src="flores.html" style="width: 100%; height: 100%; border: none; display: block;"></iframe>                
+        </section>
+
+        <section id="screen-music" class="screen hidden fade-in">
+            <h1 class="handwriting-title" style="font-size: 3.5rem; margin-bottom: 10px;">
+                Una canción para ti
+            </h1>
+    
+            <p class="subtitle" style="font-size: 1.5rem; margin-bottom: 20px;">
+                Esta canción se la dedico a mi personita especial
+            </p>
+
+            <div class="video-wrapper" style="width: 90%; max-width: 900px; margin: 0 auto;">
+                <iframe 
+                    width="100%" 
+                    height="500" 
+                    src="https://www.youtube.com/embed/YMkGOwosPgw" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen
+                    style="border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
+                </iframe>
+            </div>
+
+            <p class="tiny-text red-text" style="font-size: 1.2rem; margin-top: 15px;">
+                Mensajito para 💓mi niña especial💓 desde 0:40 
+            </p>
+
+            <button class="btn-back" onclick="goBack()" style="font-size: 1.2rem; padding: 10px 30px;">
+                <i class="fa-solid fa-arrow-left"></i> Volver
+            </button>
+        </section>
+
+        <section id="screen-letter" class="screen hidden fade-in">
+            <h1 class="handwriting-title red-text">Para mi pequeñita especial</h1>
+            <div class="letter-content">
+                <h2>¡Feliz cumpleaños, mi amorcitoo!</h2>
+                <p>
+                    Hoy quiero celebrar a la persona más especial que he conocido en toda mi vida. Tuu, mi chiquitita, eres lo que más amo en este mundo y la personita que me da la fuerza necesaria para levantarme y seguir adelante cada día. Quiero que sepas que jamás me voy a ir de tu lado. Pase lo que pase  yo estaré contigo.... luchando con todas mis fuerzas para construir ese futuro donde los dos seamos felices.
+                    <br><br>
+                    Gracias, mi amor, por llegar a mi vida y darle sentido. Hoy cumples 21 añitos y aunque creas que no lo es... es un dia muy especial. De verdad espero seguir a tu lado para verte cumplir muchos añitos más y asegurarme de que sean tan especiales como tú te mereces.
+                    <br><br>
+                    Sé que no soy perfecto. Sé que hay momentos en los que  ya no soy suficiente, pero quiero que sepas que me esfuerzo cada día por ser mejor para ti. Mi meta es tu felicidad. Te prometo que estoy dando todo solo para ver esa sonrisita tuya que me encanta y me ilumina los días. Por favor, mi niña, déjame seguir a tu lado, porque te juro que me dedicaré a cuidarte, a que nunca te falte nada y a protegerte para que tú....mi bebita hermosa, estés siempre sana, tranquilita y feliz.
+                    <br><br>
+                    ¡Feliz cumpleaños, mi niña hermosa!
+                </p>
+                <p class="sign">Con todo mi amor,<br>Jamir❤</p>
+            </div>
+            <button class="btn-back" onclick="goBack()">
+                <i class="fa-solid fa-arrow-left"></i> Volver
+            </button>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
